@@ -8,13 +8,13 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const expressHandlebars = require('express-handlebars');
 
-const port = process.env.port || process.env.NODE_PORT || 3000;
+const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
 const dbURL = process.env.MONGODB_URI || 'mongodb://localhost/DomoMaker';
 
 mongoose.connect(dbURL, (err) => {
   if (err) {
-    console.log('Could not connect to the database');
+    console.log('Could not connect to database');
     throw err;
   }
 });
